@@ -1,0 +1,26 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/NishaJudha/github.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building application...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running unit tests...'
+            }
+        }       
+     }
+ }
+
+  
